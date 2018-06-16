@@ -13,6 +13,7 @@ $("ul").on("click", "span", function(event) {
 	event.stopPropagation();
 });
 
+// Create a new todo when enter is pressed
 $("input[type='text']").keypress(function(event) {
 	if(event.which === 13) {
 		// Get text for new todo from input
@@ -23,3 +24,8 @@ $("input[type='text']").keypress(function(event) {
 		$("ul").append("<li><span><i class='far fa-trash-alt'></i></span> " + todoText + "</li>")
 	}
 });
+
+// Toggle input
+$(".fa-edit").click(() => {
+	$("input[type='text']").slideToggle(100);
+})
